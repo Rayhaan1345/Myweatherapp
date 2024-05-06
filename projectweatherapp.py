@@ -36,25 +36,6 @@ h = st.checkbox("Location coordinates 🌎 🗼 ")
 u = st.checkbox("Forecast")
 i = st.checkbox("Wind Speed 💨")
 def main():
-     count = 5
-     z = st.text_input("city: (please enter country code for places with same name in multiple regions eg: Cambridge, US)")
-     while count > 0:
-          if not z.startswith('a') and z != None:
-               st.info("Enter a valid city name, beginning with a")
-
-#     z = st.text_input("city: (please enter country code for places with same name in multiple regions eg: Cambridge, US)")
-#     iop = 2
-#     if not z.startswith('a') and z != None:
-#          st.info("type again")
-#          iop -= 1
-
-#     if iop == 1 and z != None:
-#          z = st.text_input("city: (please enter country code for places with same name in multiple regions eg: Cambridge, US)", key='iop')
-#          if not z.startswith('a'):
-#               iop -= 1
-#     if iop == 0:
-#          st.markdown("incorrect You used up chance. Project broken")
-#          sys.exit()
 
 
     city()
