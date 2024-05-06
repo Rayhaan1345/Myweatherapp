@@ -36,7 +36,8 @@ h = st.checkbox("Location coordinates 🌎 🗼 ")
 u = st.checkbox("Forecast")
 i = st.checkbox("Wind Speed 💨")
 def main():
-
+    z = st.text_input("Enter the location of the place")
+    yuoi = st.info("Please enter Country Code for places which are in multiple areas, Eg: Cambridge, US")
 
     city()
     make_url(z)
