@@ -106,7 +106,7 @@ def make_url(z):
                 if h:
                     st.text(f" 🌎 The co-ordinates of the weather station are: {coord}. Search them up to see the location of monitoring systems!")
     else:
-        st.markdown(" **:red[Error fetching weather data. Maybe you were too specific?]**")
+        st.error("Error fetching data- maybe you were too specific?")
 
 
 def export():
