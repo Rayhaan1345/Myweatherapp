@@ -29,12 +29,15 @@ st.subheader(":blue[Made by: Rayhaan Khan]")
 url = "https://countrycode.org/"
 st.write("For finding country codes visit: [🔘](%s)" % url)
 
-
+## Creating checkbox
 
 g = st.checkbox("Visibility 👀")
 h = st.checkbox("Location coordinates 🌎 🗼 ")
 u = st.checkbox("Forecast")
 i = st.checkbox("Wind Speed 💨")
+
+##Main function - gets the input of the location
+
 def main():
     z = st.text_input("Enter the location of the place")
     yuoi = st.info("Please enter Country Code for places which are in multiple areas, Eg: Cambridge, US")
@@ -50,15 +53,18 @@ def city():
     z = st.text_input("enter the location (more detail)(optional): ")
     return z
 
+# Making the URL for the openweather API to use.
+
 def make_url(z):
     ip = f'http://api.openweathermap.org/data/2.5/weather?q={z}&appid=867a0216a489131cfa37409ca09cfc2e'
     zt = f'https://api.openweathermap.org/data/2.5/forecast?q={z}&appid=867a0216a489131cfa37409ca09cfc2e'
-    response = requests.get(ip)
-    meow = requests.get(zt)
+    response = requests.get(ip) #Requests library
+    meow = requests.get(zt) # Requests library - gets the URL specified's info 
+    
     if response.status_code == 200:
                 #current
-                data = response.json()
-                temp = data['main']['temp']
+                data = response.json() # conversion to json
+                temp = data['main']['temp'] # finding the desired stuff
                 temp = temp -273
                 temp = round(temp)
                 desc = data['weather'][0]['description']
@@ -106,8 +112,7 @@ def make_url(z):
                 if h:
                     st.text(f" 🌎 The co-ordinates of the weather station are: {coord}. Search them up to see the location of monitoring systems!")
     else:
-        st.error("Error fetching data- maybe you were too specific?")
-
+        st.error("Error fetching data- maybe you were too specific?") # error displayed
 
 def export():
       st.text(make_url)
